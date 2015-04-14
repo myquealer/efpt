@@ -1,0 +1,13 @@
+{% extends '::base.html.twig' %}
+{% block title -%}Edit Attribute{% endblock %}
+
+{% block body -%}
+    <h1>Edit Attributes</h1>
+
+    {{ form(edit_form) }}
+
+    <a class="btn btn-default btn-xs" href="{{ path('attributes') }}">
+        Back
+    </a>
+    {{ form(delete_form) }}
+{% endblock %}

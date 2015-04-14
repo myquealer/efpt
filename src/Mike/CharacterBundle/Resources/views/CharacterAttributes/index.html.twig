@@ -1,0 +1,34 @@
+{% extends '::base.html.twig' %}
+{% block title -%}Character Attributes{% endblock %}
+
+{% block body -%}
+    <h1>Character Attributes</h1>
+
+    <table class="records_list table">
+        <thead>
+            <tr>
+                <th>Character</th>
+                <th>Attribute</th>
+                <th>Value</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.character.name }}</td>
+                <td>{{ entity.attribute.name }}</td>
+                <td>{{ entity.value }} {{ entity.attribute.unit }}</td>
+                <td>
+                    <a class="btn btn-default btn-xs" href="{{ path('characterattributes_show', { 'id': entity.id }) }}">show</a>
+                    <a class="btn btn-default btn-xs" href="{{ path('characterattributes_edit', { 'id': entity.id }) }}">edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-default" href="{{ path('characterattributes_new') }}">
+        Create a new character attribute
+    </a>
+{% endblock %}

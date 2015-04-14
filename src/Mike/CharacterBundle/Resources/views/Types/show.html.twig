@@ -1,0 +1,30 @@
+{% extends '::base.html.twig' %}
+{% block title -%}Character Type{% endblock %}
+
+{% block body -%}
+    <h1>Character Type</h1>
+
+    <table class="record_properties table">
+        <tbody>
+            <tr>
+                <th>Name</th>
+            </tr>
+            <tr>
+                <td>{{ entity.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div>
+        <a class="btn btn-default btn-xs" href="{{ path('types') }}">
+            Back
+        </a>
+    </div>
+    <div>
+        <a class="btn btn-default btn-xs" href="{{ path('types_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </div>
+    {{ form(delete_form) }}
+
+{% endblock %}

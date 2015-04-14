@@ -1,0 +1,30 @@
+{% extends '::base.html.twig' %}
+{% block title -%}Character Types{% endblock %}
+
+{% block body -%}
+    <h1>Character Types</h1>
+
+    <table class="records_list table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.name }}</td>
+                <td>
+                    <a class="btn btn-default btn-xs" href="{{ path('types_show', { 'id': entity.id }) }}">show</a>
+                    <a class="btn btn-default btn-xs" href="{{ path('types_edit', { 'id': entity.id }) }}">edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-default" href="{{ path('types_new') }}">
+        Create a new character type
+    </a>
+    {% endblock %}

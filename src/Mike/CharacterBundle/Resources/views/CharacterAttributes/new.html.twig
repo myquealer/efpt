@@ -1,0 +1,16 @@
+{% extends '::base.html.twig' %}
+{% block title -%}New Character Attribute{% endblock %}
+
+{% block body -%}
+    <h1>CharacterAttributes creation</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('characterattributes') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

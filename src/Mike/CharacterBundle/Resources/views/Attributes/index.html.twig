@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+{% block title -%}Attributes{% endblock %}
+
+{% block body -%}
+    <h1>Attributes</h1>
+
+    <table class="records_list table">
+        <thead>
+            <tr>
+                <th>Character Type</th>
+                <th>Attribute Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.type.name }}</td>
+                <td>{{ entity.name }}</td>
+                <td>
+                    <a class="btn btn-default btn-xs" href="{{ path('attributes_show', { 'id': entity.id }) }}">show</a>
+                    <a class="btn btn-default btn-xs" href="{{ path('attributes_edit', { 'id': entity.id }) }}">edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-default" href="{{ path('attributes_new') }}">
+        Create a new attribute
+    </a>
+{% endblock %}

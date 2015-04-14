@@ -1,0 +1,13 @@
+{% extends '::base.html.twig' %}
+{% block title -%}Edit Character Attribute{% endblock %}
+
+{% block body -%}
+    <h1>Edit Character Attribute</h1>
+
+    {{ form(edit_form) }}
+
+    <a class="btn btn-default btn-xs" href="{{ path('characterattributes') }}">
+        Back
+    </a>
+    {{ form(delete_form) }}
+{% endblock %}
