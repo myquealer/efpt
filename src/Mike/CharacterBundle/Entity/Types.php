@@ -43,6 +43,13 @@ class Types
      */
     private $name;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="specialAbility", type="string", length=255)
+     */
+    private $specialAbility;
+
     public function __construct(){
         $this->characters = new ArrayCollection();
         $this->attributes = new ArrayCollection();
@@ -79,6 +86,29 @@ class Types
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set specialAbility
+     *
+     * @param string $specialAbility
+     * @return Types
+     */
+    public function setSpecialAbility($specialAbility)
+    {
+        $this->specialAbility = $specialAbility;
+
+        return $this;
+    }
+
+    /**
+     * Get specialAbility
+     *
+     * @return string 
+     */
+    public function getSpecialAbility()
+    {
+        return $this->specialAbility;
     }
 
     /**

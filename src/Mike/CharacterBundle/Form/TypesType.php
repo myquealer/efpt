@@ -16,6 +16,7 @@ class TypesType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('specialAbility')
         ;
     }
     
