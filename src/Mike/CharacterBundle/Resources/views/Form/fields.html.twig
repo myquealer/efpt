@@ -1,5 +1,5 @@
 {% block range_widget %}
 {% spaceless %}
-    {{ min }}<input type="range" min="{{ min }}" max="{{ max }}" step="{{ ((max - min) / 100)|round }}" value="{{ value }}">{{ max }} {{ unit }}
+    {{ min }}{{ form_widget(form, {'type' : 'range', 'attr' : {'min' : (min), 'max' : (max), "step" : (((max - min) / 100)|round) } }) }}{{ max }} {{ unit }}
 {% endspaceless %}
 {% endblock %}

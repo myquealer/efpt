@@ -17,7 +17,7 @@ class CharacterAttributesType extends AbstractType
         $builder
             ->add('character', 'entity', array('required' => TRUE, 'class' => 'MikeCharacterBundle:Characters'))
             ->add('attribute', 'entity', array('required' => TRUE, 'class' => 'MikeCharacterBundle:Attributes'))
-            ->add('value', new RangeType(), array('max'=>500,'min'=>1, 'unit'=>'x'))
+            ->add('value', new RangeType(), array('max'=>100,'min'=>1, 'unit'=>'units'))
 
         ;
     }
