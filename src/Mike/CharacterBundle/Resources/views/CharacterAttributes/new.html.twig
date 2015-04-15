@@ -2,15 +2,11 @@
 {% block title -%}New Character Attribute{% endblock %}
 
 {% block body -%}
-    <h1>CharacterAttributes creation</h1>
+    <h1>New Character Attribute</h1>
 
     {{ form(form) }}
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('characterattributes') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+    <a class="btn btn-default btn-xs" href="{{ path('characterattributes') }}">
+        Back
+    </a>
 {% endblock %}
