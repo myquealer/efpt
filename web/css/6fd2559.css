@@ -7066,3 +7066,7 @@ button.close {
 label{
 	width:100px;
 }
+input[type="range"]{
+	display: inline-block;
+	width: auto;
+}
