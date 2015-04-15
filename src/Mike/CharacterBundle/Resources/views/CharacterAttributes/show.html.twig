@@ -7,27 +7,29 @@
     <table class="record_properties">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ entity.id }}</td>
+                <th>Character</th>
+                <td>{{ entity.character.name }}</td>
+            </tr>
+            <tr>
+                <th>Attribute</th>
+                <td>{{ entity.attribute.name }}</td>
             </tr>
             <tr>
                 <th>Value</th>
-                <td>{{ entity.value }}</td>
+                <td>{{ entity.value }} {{ entity.attribute.unit }}</td>
             </tr>
         </tbody>
     </table>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('characterattributes') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('characterattributes_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    <div>
+    	<a class="btn btn-default btn-xs" href="{{ path('characterattributes') }}">
+    	    Back
+		</a>
+	</div>
+	<div>
+	    <a class="btn btn-default btn-xs" href="{{ path('characterattributes_edit', { 'id': entity.id }) }}">
+    	    Edit
+		</a>
+	</div>
+    {{ form(delete_form) }}
 {% endblock %}

@@ -2,20 +2,32 @@
 {% block title -%}Character{% endblock %}
 
 {% block body -%}
-    <h1>Character</h1>
+    <h1>Character: {{ entity.name }}</h1>
 
     <table class="record_properties table">
         <tbody>
             <tr>
+                <th>Name</th>
                 <th>Character Type</th>
-                <td>{{ entity.type.name }}</td>
             </tr>
             <tr>
-                <th>Name</th>
                 <td>{{ entity.name }}</td>
+                <td>{{ entity.type.name }}</td>
             </tr>
-        </tbody>
-    </table>
+
+            <tr>
+                <th>Character Attribute</th>
+                <th>Value</th>
+            </tr>
+
+			{% for characterAttribute in entity.characterAttributes %}
+				<tr>
+            		<td>{{ characterAttribute.attribute }}</td>
+            		<td>{{ characterAttribute.value }} {{ characterAttribute.attribute.unit }}</td>
+            	</tr>
+			{% endfor %}
+		</tbody>
+	</table>
 
     <div>
         <a class="btn btn-default btn-xs" href="{{ path('characters') }}">
